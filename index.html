@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>将歌单的所有名称用空格隔开，然后直接复制到下面的输入框就好了</h2>
+		<input type="" name="" id="music_data" value="" placeholder="这里输入歌名"/>
+		<button type="button" id="change" onclick="update()">刷新</button>
+		<p id="music">歌名</p>
+	</body>
+	<script type="text/javascript">
+		var data = //下面双引号里面可以添加所有歌名，中间空格隔开就行了，这样就不用复制来复制去了
+		""
+		var music_data = document.querySelector("#music_data")
+		var music = document.getElementById("music")
+		music_data.value = data
+		function update() {
+			data = music_data.value
+			var music_name = data.split(" ")
+			var random_number = Math.random()*music_name.length
+			var random_int_number = random_number.toString().split(".")[0]
+			music.innerHTML = music_name[random_int_number]
+		}
+	</script>
+</html>
